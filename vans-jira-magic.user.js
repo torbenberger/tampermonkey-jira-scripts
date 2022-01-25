@@ -15,7 +15,7 @@
     setTimeout(() => {
         Array.from(document.querySelectorAll('.bbb-gp-codereview-issue-web-panel__merge-request-line a')).forEach(pr => {
             var spanChild = pr.parentElement.querySelector('span.aui-lozenge');
-            var targetBranch = pr.getAttribute('title').match(/( -> .*\s)/)[0].trim();
+            var targetBranch = pr.getAttribute('title').match(/( -> .*\s)/)[0].trim().replace('&nbsp;➡️&nbsp;');
             spanChild.innerHTML = spanChild.innerHTML + ' ' + targetBranch;
         });
     }, 1000)
